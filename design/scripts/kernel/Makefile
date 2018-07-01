@@ -37,11 +37,10 @@
 
 LIBRARY = libxlnxdnn.so
   
-PLATFORM = zcu102
+PLATFORM = zcu104
 #VERBOSE = -verbose
 
 SDSFLAGS = -sds-pf ${PLATFORM} -xp param:compiler.skipTimingCheckAndFrequencyScaling=1 \
-	-sds-hw XiConvolutionTop ../../src/conv/example/xi_convolution_top.cpp -clkid 3 -hls-tcl ./config_core2.tcl -sds-end -dmclkid 3 \
 	-sds-hw PoolTop ../../src/pool/example/pooling_layer_dp_2xio_top.cpp -clkid 3 -sds-end -dmclkid 3 \
 	-sds-hw xiSgemvTop ../../src/gemv/example/xi_sgemv_top.cpp -clkid 3 -sds-end -dmclkid 3 \
 	-sds-hw XiDeconvTop ../../src/deconv/example/xi_deconv_top.cpp -clkid 3 -sds-end -dmclkid 3 \

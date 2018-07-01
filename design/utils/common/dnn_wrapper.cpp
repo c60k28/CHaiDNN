@@ -53,9 +53,9 @@ void XiDeconvTop(KER_GMEM_DECONVINPTYPE* deconvIN, KER_GMEM_DECONVINPTYPE* decon
 
 int ConvolutionWrapper(KER_GMEM_WEIGHTTYPE *weights1, KER_GMEM_WEIGHTTYPE *weights2, KER_GMEM_OUTTYPE *output1, KER_GMEM_OUTTYPE *output2, KER_GMEM_INTYPE_OTHER *input_other1, KER_GMEM_INTYPE_OTHER *input_other2, KER_GMEM_INPUTTYPE *input_1st, KER_GMEM_BIASTYPE *bias,KER_GMEM_INPUTTYPE *inp_norm2,KER_GMEM_INPUTTYPE *inp_norm3,KER_GMEM_INPUTTYPE *istg_out1,KER_GMEM_INPUTTYPE *istg_out2,int *scalar_conv_args)
 {
-#if __SDSOC
-	#pragma SDS async(1)
-#endif
+//#if __SDSOC
+//	#pragma SDS async(1)
+//#endif
 	XiConvolutionTop(weights1,weights2, output1, output2, input_other1, input_other2, input_1st, bias, inp_norm2,inp_norm3,istg_out1,istg_out2, scalar_conv_args);
 }
 
